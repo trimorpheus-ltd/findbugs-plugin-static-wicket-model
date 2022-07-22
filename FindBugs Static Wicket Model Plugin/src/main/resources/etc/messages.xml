@@ -1,0 +1,16 @@
+<MessageCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Plugin>
+		<ShortDescription>A FindBugs Plugin that warns of programming errors using the Apache Wicket Framework</ShortDescription>
+	</Plugin>
+
+	<Detector class="findbugs.plugin.wicket.WicketStaticModelDetector">
+		<Details>Checks for static declarations of Wicket Models</Details>
+	</Detector>
+
+	<BugCode abbrev="WICKET">Bugs relating to using Apache Wicket</BugCode>
+
+	<BugPattern type="WICKET_STATIC_MODEL">
+		<ShortDescription>Wicket Models should not be declared as static because they are not thread safe.</ShortDescription>
+		<LongDescription>If Wicket Models are static, then they may be accessed concurrently from several requests. In the worst case, this can lead to corruption of the Wicket Session files and allow one user to view another user's session history.</LongDescription>
+	</BugPattern>
+</MessageCollection>

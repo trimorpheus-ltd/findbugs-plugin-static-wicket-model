@@ -1,0 +1,19 @@
+plugins {
+	id 'java-library'
+}
+
+repositories {
+	jcenter()
+}
+
+allprojects {
+	group 'findbugs-plugin'
+}
+
+dependencies {
+	implementation 'com.google.code.findbugs:findbugs:3.0.1'
+	implementation 'org.apache.wicket:wicket:1.4-rc1'
+
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'tim-group:test-driven-detectors4findbugs:test-driven-detectors4findbugs-1.0-gradle'
+}
